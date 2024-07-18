@@ -1,0 +1,51 @@
+options:
+    region: "afk"  #Create a region for the afk area using world guard and enter the name 
+
+
+every 60 second:
+	loop all players:
+		if "%region at loop-player%" contains {@region}:
+			add 1 to {time::%loop-player%}
+			if {time::%loop-player%} is greater than 9:
+				give loop-player 1 diamond
+				send "&e[&6AFK&e] &aYou recived &bx1 Diamond" to loop-player
+				set {time::%loop-player%} to 0
+				set {sece::%loop-player%} to 0
+		else:
+			set {time::%loop-player%} to 0
+       
+on join:
+	set {time::%player%} to 0
+	set {sece::%player%} to 0
+
+every 1 second:
+	loop all players:
+		if "%region at loop-player%" contains {@region}:
+			add 1 to {sece::%loop-player%}
+			wait 1 tick
+			set {_prec} to {sece::%loop-player%}/600*100
+			if {time::%loop-player%} is 1:
+				send action bar "&a⬛&c⬛⬛⬛⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 2:
+				send action bar "&a⬛⬛&c⬛⬛⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 3:
+				send action bar "&a⬛⬛⬛&c⬛⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 4:
+				send action bar "&a⬛⬛⬛⬛&c⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 5:
+				send action bar "&a⬛⬛⬛⬛⬛&c⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 6:
+				send action bar "&a⬛⬛⬛⬛⬛⬛&c⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 7:
+				send action bar "&a⬛⬛⬛⬛⬛⬛⬛&c⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 8:
+				send action bar "&a⬛⬛⬛⬛⬛⬛⬛⬛&c⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 9:
+				send action bar "&a⬛⬛⬛⬛⬛⬛⬛⬛⬛&c⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is 10:
+				send action bar "&a⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+			if {time::%loop-player%} is less than 1:
+				send action bar "&c⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛ &7(%{_prec}%%%)" to loop-player
+		else:
+			set {time::%loop-player%} to 0
+			set {sece::%loop-player%} to 0
