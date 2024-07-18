@@ -1,0 +1,10 @@
+on chat:
+    if {chat::%player's uuid%} > now:
+        cancel event
+        send "&cYou can chat again after &6%difference between {chat::%player's uuid%} and now%. &7Buy ranks to lower your cooldown ability. &a/buy" to player
+    else:
+        if player has permission "cooldown.bypass":
+            set {chat::%player's uuid%} to now
+        else:
+            set {chat::%player's uuid%} to now
+            add 3 seconds to {chat::%player's uuid%}
