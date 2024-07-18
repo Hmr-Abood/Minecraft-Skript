@@ -1,0 +1,115 @@
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+
+
+                                                                                                            MADE BY HMR_ABOOD
+                                                                                                              18.7.2024
+
+
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+#############################################################################################################################################################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+every second:
+	loop all players:
+		set {online} to number of all players
+		set title of loop-player's scoreboard to "<##FFE259>&l&os<##FFDB58>&l&oʟ<##FFD557>&l&oᴏ<##FFCE56>&l&oᴡ <##FFC155>&l&oᴍ<##FFBB54>&l&oɪ<##FFB453>&l&oɴ<##FFAE52>&l&oᴇ<##FFA751>&l&os"
+		set line 1 of loop-player's scoreboard to " "
+		set line 13 of loop-player's scoreboard to " "
+		set line 2 of loop-player's scoreboard to "<##A9CF6C>&l$ &fBalance <##A9CF6C>%formatNumber({coin::%loop-player's uuid%})%"
+		set line 11 of loop-player's scoreboard to "<##DBB8F3>&l☄ &fShards <##DBB8F3>%formatNumber({shards::%loop-player's uuid%})%"
+		set line 10 of loop-player's scoreboard to "<##F4756F>❤ &fHearts <##F4756F>%{hearts::%loop-player's uuid%}%"
+		if group of loop-player is "default":
+			set line 9 of loop-player's scoreboard to "<##9DDBDD>✌&f Rank &7Default"
+		if group of loop-player is "owner":
+			set line 9 of loop-player's scoreboard to "<##9DDBDD>✌&f Rank &cOwner"
+		if group of loop-player is "helper":
+			set line 9 of loop-player's scoreboard to "<##9DDBDD>✌&f Rank &bHelper"
+		set line 8 of loop-player's scoreboard to "&c🗡&f Kills &c%{kills::%loop-player's uuid%}%"
+		set line 7 of loop-player's scoreboard to "&4☠&f Deaths &4%{deaths::%loop-player's uuid%}%"
+		set line 6 of loop-player's scoreboard to "<##94DEDB>⌚&f Playtime <##94DEDB>%{h::%loop-player's uuid%}%h %{m::%loop-player's uuid%}%m"
+		set line 5 of loop-player's scoreboard to "<##FFFBC9>☃&f KeyAll <##FFFBC9>%{keyall}%m"
+		set line 4 of loop-player's scoreboard to " " 
+		set line 14 of loop-player's scoreboard to "&e%now formatted human-readable with "[hh:mm:ss / hh:mmz]"%"
+
+
+every 59 minutes:
+	broadcast "&e[KeyAll] &aKeyall in 1 minute!"
+every 60 minutes:
+	set {keyall} to 60
+	loop all players:
+		give loop-player 1 lime dye named "<##c9fb00>&lᴄ<##c8fb0e>&lᴏ<##c6fb1b>&lᴍ<##c5fc29>&lᴍ<##c3fc36>&lᴏ<##c2fc44>&lɴ <##c1fc51>&lᴄ<##bffc5f>&lʀ<##befd6c>&lᴀ<##bcfd7a>&lᴛ<##bbfd87>&lᴇ" with lore " " and "<##d8fb00>&lʀ<##d7fb08>&lɪ<##d5fb10>&lɢ<##d4fb17>&lʜ<##d2fb1f>&lᴛ<##d1fb27>&l-<##cffc2f>&lᴄ<##cefc36>&lʟ<##cdfc3e>&lɪ<##cbfc46>&lᴄ<##cafc4e>&lᴋ <##c8fc55>&lᴄ<##c7fc5d>&lʀ<##c5fc65>&lᴀ<##c4fc6d>&lᴛ<##c3fc74>&lᴇ <##c1fd7c>&lᴛ<##c0fd84>&lᴏ <##befd8c>&lᴏ<##bdfd93>&lᴘ<##bbfd9b>&lᴇ<##bafda3>&lɴ"
+		broadcast "<##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m "
+		broadcast " "
+		broadcast "    &e[KeyAll] &aAll online players recived 1"
+		broadcast "                  <##c9fb00>&lᴄ<##c8fb0e>&lᴏ<##c6fb1b>&lᴍ<##c5fc29>&lᴍ<##c3fc36>&lᴏ<##c2fc44>&lɴ <##c1fc51>&lᴄ<##bffc5f>&lʀ<##befd6c>&lᴀ<##bcfd7a>&lᴛ<##bbfd87>&lᴇ"
+		broadcast " "
+		broadcast "<##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m "
+	
+
+command /test:
+	permission: op
+	trigger:
+		give player 1 lime dye named "<##c9fb00>&lᴄ<##c8fb0e>&lᴏ<##c6fb1b>&lᴍ<##c5fc29>&lᴍ<##c3fc36>&lᴏ<##c2fc44>&lɴ <##c1fc51>&lᴄ<##bffc5f>&lʀ<##befd6c>&lᴀ<##bcfd7a>&lᴛ<##bbfd87>&lᴇ" with lore " " and "<##d8fb00>&lʀ<##d7fb08>&lɪ<##d5fb10>&lɢ<##d4fb17>&lʜ<##d2fb1f>&lᴛ<##d1fb27>&l-<##cffc2f>&lᴄ<##cefc36>&lʟ<##cdfc3e>&lɪ<##cbfc46>&lᴄ<##cafc4e>&lᴋ <##c8fc55>&lᴄ<##c7fc5d>&lʀ<##c5fc65>&lᴀ<##c4fc6d>&lᴛ<##c3fc74>&lᴇ <##c1fd7c>&lᴛ<##c0fd84>&lᴏ <##befd8c>&lᴏ<##bdfd93>&lᴘ<##bbfd9b>&lᴇ<##bafda3>&lɴ"
+		broadcast "<##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m "
+		broadcast " "
+		broadcast "    &e[KeyAll] &aAll online players recived 1"
+		broadcast "                  <##c9fb00>&lᴄ<##c8fb0e>&lᴏ<##c6fb1b>&lᴍ<##c5fc29>&lᴍ<##c3fc36>&lᴏ<##c2fc44>&lɴ <##c1fc51>&lᴄ<##bffc5f>&lʀ<##befd6c>&lᴀ<##bcfd7a>&lᴛ<##bbfd87>&lᴇ"
+		broadcast " "
+		broadcast "<##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m <##9cfb00>&m <##9efb08>&m <##a1fb10>&m <##a3fb18>&m <##a6fb20>&m <##a8fc28>&m <##abfc2f>&m <##adfc37>&m <##b0fc3f>&m <##b2fc47>&m <##b5fc4f>&m <##b7fc57>&m <##b9fc5f>&m <##bcfc67>&m <##befc6f>&m <##c1fd77>&m <##c3fd7e>&m <##c6fd86>&m <##c8fd8e>&m <##cbfd96>&m <##cdfd9e>&m "
+	
+
+	
+every 1 minute:
+	remove 1 from {keyall}
+
+on script load:
+	set {keyall} to 60
+	
+
+every 1 second:
+	loop all players:
+		add 1 to {s::%loop-player's uuid%}
+		add 1 to {ss::%loop-player's uuid%}
+		if {s::%loop-player's uuid%} > 59:
+			remove 60 from {s::%loop-player's uuid%} 
+			add 1 to {m::%loop-player's uuid%}
+		if {m::%loop-player's uuid%} > 59:
+			remove 60 from {m::%loop-player's uuid%}
+			add 1 to {h::%loop-player's uuid%}
+
+
+
+
+on join:
+	if {shards::%player's uuid%} is not set:
+		set {shards::%player's uuid%} to 0
+	if {kills::%player's uuid%} is not set:
+		set {kills::%player's uuid%} to 0
+	if {deaths::%player's uuid%} is not set:
+		set {deaths::%player's uuid%} to 0
+	if {h::%player's uuid%} is not set:
+		set {s::%player's uuid%} to 0
+		set {m::%player's uuid%} to 0
+		set {h::%player's uuid%} to 0
+		set {ss::%player's uuid%} to 0
+
+on death of a player:
+	if attacker is player:
+		add 1 to {kills::%attacker's uuid%}
+		add 1 to {deaths::%victim's uuid%}
+		
+on death of a player:
+	add 1 to {deaths::%victim's uuid%}
