@@ -1,0 +1,36 @@
+    
+
+command /clearlag:
+    permission: admin
+    trigger:
+        broadcast "&e----------ᴄʟᴇᴀʀ ʟᴀɢ ꜱᴜᴍᴍᴀʀʏ&e----------"
+        broadcast " "
+        broadcast "&eItems Killed: &a%size of dropped items%"
+        broadcast " "
+        broadcast "&eEntites Killed: &a0"
+        broadcast " "
+        broadcast "&e------------------------------------"
+        kill dropped items
+        
+        
+every 10 minutes:
+    wait 9 minutes
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 1 minute!"
+    wait 50 seconds
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 10 seconds!"
+    wait 5 seconds
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 5 seconds!"
+    wait 2 seconds
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 3 seconds!"
+    wait 1 seconds
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 2 seconds!"
+    wait 1 seconds
+    broadcast "&e[ᴄʟᴇᴀʀ &6ʟᴀɢ] &cWarning! &aDropped Items are being cleared in 1 seconds!"
+    broadcast "&e----------ᴄʟᴇᴀʀ ʟᴀɢ ꜱᴜᴍᴍᴀʀʏ&e----------"
+    broadcast " "
+    broadcast "&eItems Killed: &a%size of dropped items%"
+    broadcast " "
+    broadcast "&eEntites Killed: &a0"
+    broadcast " "
+    broadcast "&e------------------------------------"
+    kill dropped items
