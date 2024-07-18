@@ -1,0 +1,106 @@
+Made by Hmr_Abood                                               dont steal or sell                                            ###############################################################
+ 
+ 
+ 
+ 
+on join:
+	if {level::%player%} is not set:
+		set {level::%player%} to 1
+		set {exp::%player%} to 0
+		set {expgain::%player%} to 0
+ 
+options:
+    prefix: &3[&bLevels&3]
+    levelupmsg: &7You have leveled up to level %{level::%player%}%&7.
+    expgainmsg: &7You have gained %{expgain::%loop-player%}% &7exp, For being online. 
+    level: {level::%player%}
+    exp: {exp::%player%}
+    expgain: {expgain::%player%}
+ 
+every 1 minute:
+    loop all players:
+        set {expgain::%loop-player%} to random number between 1 and 5
+        add {expgain::%loop-player%} to {exp::%loop-player%}
+        send "{@prefix} {@expgainmsg}" to loop-player
+        send action bar "&b(%{exp::%loop-player%}%&7/&b100)" to loop-player
+ 
+on death of player:
+	add 15 to {exp::%attacker%}
+	send "{@prefix} You gained +15 exp from killing &e%victim%" to attacker
+ 
+every second:
+	loop all players:
+		if {exp::%loop-player%} is greater than 99:
+			add 1 to {level::%loop-player%}
+			send "{@prefix} &7You have successfully leveled up to level %{level::%loop-player%}%&7." to loop-player
+			set {exp::%loop-player%} to 0
+ 
+command exp [<offlineplayer>]:
+	trigger:
+		if arg-1 is not set:
+			send "{@prefix} &7You currently have %{exp::%player%}%&7 exp."
+		else:
+			if arg-1 is set:
+				send "{@prefix} &7%arg-1% &7currently has %{exp::%arg-1%}%&7 exp."
+ 
+ 
+on chat:
+	if {level::%player%} is between 1 and 9:
+		set chat format to "&7[%{level::%player%}%] %player's display name% &8► &f%message%"
+	if {level::%player%} is between 10 and 19:
+		set chat format to "&a[%{level::%player%}%] %player's display name% &8► &f%message%"
+	if {level::%player%} is between 20 and 29:
+		set chat format to "&b[%{level::%player%}%] %player's display name% &8► &f%message%"
+	if {level::%player%} is between 30 and 39:
+		set chat format to "&e[%{level::%player%}%] %player's display name% &8► &f%message%"
+	if {level::%player%} is greater than 39:
+		set chat format to "&6[%{level::%player%}%] %player's display name% &8► &f%message%"
+ 
+ 
+command /level [<offlineplayer>] [<text>] [<integer>]::
+	permission: level.default
+	trigger:
+		if arg-1 is set:
+			if arg-2 is not set:
+				if {level::%arg-1%} is set:
+					send "{@prefix} %arg-1%&7's level is %{level::%arg-1%}%" to player
+				else if {level::%arg-1%} is not set:
+					if arg-1 is not "xp":
+						send "&cOops looks like %arg-1% has never played on the server" to player
+			if arg-2 is "set":
+				if player has permission "level.admin":
+					set {level::%arg-1%} to arg-3
+				else if player does not have permission "level.admin":
+				send "&cThis command is restricted." to player
+		if arg-1 is "xp":
+			send "You currently have &b%{exp::%player%}%/100" to player
+		if arg-1 is not set:
+			send "          {@prefix}" to player
+			send " " to player
+			send "&bCommands" to player
+			send "&3- &b/level <player> &3| &7Allows you to view the player level" to player
+			send "&3- &b/level xp &3| &7Shows you how many xp you have till the next level. " to player  
+ 
+ 
+ 
+ 
+command expset [<offlineplayer>] [<integer>]:
+	permission: level.admin
+	trigger:
+		if arg-2 is set:
+			set {exp::%player%} to arg-2
+			send "{@prefix} &7Successfully set %arg-1%&7's exp to %arg-2%&7."
+ 
+ 
+on mine of any ore:
+	add 1 to {ore::levels::%player%}
+	add 0.1 to {exp::%player%}
+	send action bar "&b(&3%{exp::%player%}%&b/&3100)" to player
+ 
+every 1 second:
+	loop all players:
+		if {ore::levels::%loop-player%} is greater than 49:
+			add 15 to {exp::%loop-player%}
+			send "{@prefix} You gained +15 exp from mining 50 random ores" to loop-player
+			set {ore::levels::%loop-player%} to 0
+ 
