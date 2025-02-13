@@ -14,7 +14,8 @@
 #############################################################################################################################################################################################################################################################################
 
 
-
+options:
+	prefix: &7[&eSlow&6Farms&7]
 
 
 
@@ -115,18 +116,15 @@ command /coin [<text>] [<offlineplayer>] [<integer>]:
 			if player does not have permission "coin.admin":
 				send "&cThis command is restricted" to player
 		
-command /eese:
+command /multiplier:
 	permission: op
 	trigger:
 		add 0.5 to {multiplier::%player's uuid%}
 
-options:
-	name: &7[&eSlow&6Farms&7]
+
 
  
-command /seell:
-  trigger:
-    sell(player, (inventory of player))
+
 	
 	
 
