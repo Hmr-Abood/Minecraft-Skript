@@ -4,4 +4,4 @@ To use the Following Skripts you need the following Addons/Plugins:
 
 
 If you would like to support me please do so here:
-https://guns.lol/hmr_abood
+https://guns.lol/32A
